@@ -83,6 +83,9 @@ namespace Oxide.Game.Rust
             AddCovalenceCommand(new[] { "oxide.reload", "o.reload", "plugin.reload" }, "ReloadCommand", "oxide.reload");
             AddCovalenceCommand(new[] { "oxide.unload", "o.unload", "plugin.unload" }, "UnloadCommand", "oxide.unload");
 
+            // Add core extension commands
+            AddCovalenceCommand(new[] { "oxide.ext.reload", "o.ext.reload", "ext.reload" }, "ExtReloadCommand", "oxide.ext.reload");
+
             // Add core permission commands
             AddCovalenceCommand(new[] { "oxide.grant", "o.grant", "perm.grant" }, "GrantCommand", "oxide.grant");
             AddCovalenceCommand(new[] { "oxide.group", "o.group", "perm.group" }, "GroupCommand", "oxide.group");
