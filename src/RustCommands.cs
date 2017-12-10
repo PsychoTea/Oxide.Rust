@@ -663,5 +663,24 @@ namespace Oxide.Game.Rust
         }
 
         #endregion Version Command
+
+        #region Ext Load Command
+
+        [HookMethod("ExtLoadCommand")]
+        private void ExtLoadCommand(IPlayer player, string command, string[] args)
+        {
+            if (args.Length < 1)
+            {
+                player.Reply(lang.GetMessage("CommandUsageExtLoad", this, player.Id));
+                return;
+            }
+
+            foreach (var name in args)
+            {
+                Interface.Oxide.ReloadExtension(name);
+            }
+        }
+
+        #endregion
     }
 }
